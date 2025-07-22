@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para Vos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Dancing Script', cursive;
+      background-color: #fff8f0;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+    }
+
+    h1, h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.3em;
+      line-height: 1.6;
+    }
+    .comienzo {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(255, 0, 0, 0.336);
+      margin-top: 20px;
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .gallery-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .gallery-item img {
+      max-width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .entry-screen {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #fff0f4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      text-align: center;
+    }
+
+    .entry-screen h1 {
+      font-size: 3em;
+      margin-bottom: 30px;
+    }
+
+    .entry-screen button {
+      padding: 10px 30px;
+      font-size: 1.2em;
+      border: none;
+      background-color: #ffb6c1;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .entry-screen button:hover {
+      background-color: #ff99aa;
+    }
+
+    .emoji-rain {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    .emoji {
+      position: absolute;
+      font-size: 2rem;
+      animation: floatUp 5s linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(100vh); opacity: 1; }
+      100% { transform: translateY(-10vh); opacity: 0; }
+    }
+
+    footer {
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 1.2em;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="entry-screen" id="entry">
+    <h1>Para vos Mi Amorr, con todo mi corazón</h1>
+    <button onclick="startLetter()">Leer Carta</button>
+  </div>
+
+  <div class="emoji-rain" id="emojiRain"></div>
+
+  <main style="display: none" id="mainContent">
+    <section class="fade-in">
+      <h2>Hola, Rocío🤭</h2>
+      <p>Quería hacer algo distinto para tu cumpleaños. Algo que puedas guardar y volver a visitar cada vez que quieras verlo...</p>
+    </section>
+
+    <section class="fade-in">
+      <h2>Cómo empezó todo</h2>
+      <img class="comienzo" src="img/fotos/Comienzo.jpg" alt="">
+      <p>No sé exactamente en qué momento, pero empecé a sentir algo especial por vos, ese dia me sentí muy comodo y feliz a tu lado, fue el momento en el que me animé a hacer algo diferente y comenzar a ser más feliz. Tal vez fue tu risa, tu forma de ver las cosas, o simplemente vos.</p>
+    </section>
+
+    <section class="fade-in">
+      <h2>Cosas que me encantan de vos</h2>
+      <ul style="list-style: none; padding: 0; font-size: 1.2em">
+        <p>De vos me gustan tantas cosas, hasta tu nombre me parece unico, a pesar de que hay miles de personas llamadas igual, solo en vos es perfecto, coincide con todo tu ser, como tus lindos ojos, tu sonrisa, su sentido del humor, su inteligencia, su voz, tu corazón, hasta ese carácter que tenés, a pesar de qué me hagas la contra siempre y no te bancas que te cague con tu pasion, amor de tu vida que es tu club, sos excepcional y una excelente persona que elijo compartir momentos increibles con vos 💖</p>
+      </ul>
+    </section>
+
+    <section class="fade-in">
+      <h2>Momentos que recuerdo</h2>
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="img/fotos/Ultima-foto.jpg" alt="Última foto juntos">
+          <p>La última vez que nos vimos quedó inmortalizada en esta imagen. Cada vez que la veo, me dan más ganas de verte otra vez.</p>
+        </div>
+        <div class="gallery-item">
+          <img src="img/fotos/Primer-Carrera.jpg" alt="Primera carrera">
+          <p>Ese día me motivaste a más. Fue mi inicio corriendo, y también el comienzo de algo muy especial para mí que podemos tener muy en común.</p>
+        </div>
+        <div class="gallery-item">
+          <img src="img/fotos/Vuelta-Carrera.jpg" alt="Vuelta de la carrera">
+          <p>Te dormiste en el colectivo a la vuelta de mi primer carrera y no sabés cuánto me hizo sonreír. Fue un momento tierno y divertido que no me olvido.</p>
+        </div>
+        <div class="gallery-item">
+          <img src="img/fotos/Foto-Favorita-Juntos.jpg" alt="Selfie favorita juntos">
+          <p>Una de mis selfies favoritas juntos. Ese día salimos tan bien los dos, pero más que eso, fue lo bien que la pasamos.</p>
+        </div>
+        <div class="gallery-item">
+          <img src="img/fotos/Segunda-Foto-Favorita-Juntos.jpg" alt="Primera salida juntos">
+          <p>Nuestra primera salida solos. Pasamos todo el día juntos, fue hermoso. Lo tengo grabado en el corazón.</p>
+        </div>
+        <div class="gallery-item">
+          <img src="img/fotos/Lindo-Recuerdo.jpg" alt="En el cine">
+          <p>Una cita de película, literalmente. Ese día dimos un pasito más y fue de los más lindos que compartimos.</p>
+        </div>
+        <div class="gallery-item">
+          <img src="img/fotos/Foto-Ternura-Juntos.jpg" alt="Abrazados">
+          <p>Ese dia fue muy tierno porqué te ibas a jugar y cada abrazo y beso me daba más ternura. La foto fue espontánea, pero salimos tan lindos juntos y abrazados que me la guardo para siempre.</p>
+        </div>
+        <div class="gallery-item">
+          <img src="img/fotos/Foto-Ternura-ella.jpg" alt="Selfie en pijama">
+          <p>No puedo con tanta ternura, me derrito de amorrrrrr. Ese pijama de patitas y tu carita me hacen sonreír siempre.</p>
+        </div>
+        <div class="gallery-item">
+          <img src="img/fotos/Foto-Favorita.jpg" alt="Su selfie favorita">
+          <p>Mi foto favorita tuya. Salís hermosa, como siempre, pero esta tiene algo especial... sos vos siendo vos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="fade-in">
+      <h2>Gracias por existir</h2>
+      <p>Así, simple. Gracias por estar en este mundo. Y por permitirme conocerte más.</p>
+    </section>
+
+    <footer>
+      <p><strong>Continuará...</strong></p>
+      <p>No se terminó la carta, porque va a continuar avanzando con nuestro futuro juntos.</p>
+    </footer>
+  </main>
+
+  <script>
+    function startLetter() {
+      document.getElementById('entry').style.display = 'none';
+      document.getElementById('mainContent').style.display = 'block';
+      generateEmojis();
+    }
+
+    // Fade-in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Emoji rain
+const emojis = ['🎈', '🎉', '💕', '🌸', '💌','✨','🐧'];
+const images = ['img/Escudo1_nuevo.png', 'img/Escudo2_nuevo.png','img/Messi-Dedos.png', 'img/Messi-Perrito.png', 'img/Perritos.png']; // Agregá tus imágenes
+
+function generateEmojis() {
+  const rain = document.getElementById('emojiRain');
+  setInterval(() => {
+    const emoji = document.createElement('div');
+    emoji.classList.add('emoji');
+    
+    // 50% chance de usar imagen o emoji
+    if (Math.random() > 0.5) {
+      // Usar emoji
+      emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    } else {
+      // Usar imagen
+      const img = document.createElement('img');
+      img.src = images[Math.floor(Math.random() * images.length)];
+      img.style.width = '30px';
+      img.style.height = '30px';
+      emoji.appendChild(img);
+    }
+
+    emoji.style.left = Math.random() * 100 + 'vw';
+    emoji.style.animationDuration = (3 + Math.random() * 3) + 's';
+    rain.appendChild(emoji);
+    setTimeout(() => emoji.remove(), 6000);
+  }, 300);
+}
+
+  </script>
+</body>
+</html>
